@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Web | Muhamad Fazriel Attallah</title>
+
+  <link rel="icon" type="image/jpeg" href="ajil.jpeg">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+
+
+    <header class="hero">
+
+      <figure>
+        <img class="foto" src="ajil.jpeg" alt="Foto profil Muhamad Fazriel Attallah">
+        <figcaption>Foto Profile</figcaption>
+      </figure>
+
+      <h1>Muhamad Fazriel Attallah</h1>
+      <p>Mahasiswa yang sedang belajar membuat website statis dengan HTML dan CSS.</p>
+
+      <table class="info">
+        <tbody>
+          <tr><th scope="row">Nama</th><td>Muhamad Fazriel Attallah</td></tr>
+          <tr><th scope="row">NIM</th><td>102022530032</td></tr>
+          <tr><th scope="row">Fakultas</th><td>Fakultas Rekayasa Industri</td></tr>
+          <tr><th scope="row">Program Studi</th><td>Sistem Informasi</td></tr>
+        </tbody>
+      </table>
+
+      <nav aria-label="Sosial media">
+        <ul class="sosmed">
+          <li><a href="https://x.com/username" target="_blank" rel="noopener noreferrer" title="X">X</a></li>
+          <li><a href="https://github.com/username" target="_blank" rel="noopener noreferrer" title="GitHub">GH</a></li>
+          <li><a href="https://instagram.com/enjoyajil" target="_blank" rel="noopener noreferrer" title="Instagram">IG</a></li>
+          <li><a href="https://linkedin.com/in/username" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a></li>
+        </ul>
+      </nav>
+    </header>
+
+        <footer class="rata-tengah">
+      <p>Hari ini: <time id="waktu" datetime="">memuat tanggal...</time></p>
+      <p>&copy; <span id="tahun">2026</span> Muhamad Fazriel Attallah</p>
+    </footer>
+  </main>
+
+  <script>
+    const el = document.getElementById("waktu");
+    function perbarui() {
+      const now = new Date();
+      el.textContent = now.toLocaleString("id-ID", {
+        weekday: "long", day: "numeric", month: "long", year: "numeric",
+        hour: "2-digit", minute: "2-digit", second: "2-digit"
+      });
+      el.setAttribute("datetime", now.toISOString());
+      document.getElementById("tahun").textContent = now.getFullYear();
+    }
+    perbarui();
+    setInterval(perbarui, 1000);
+  </script>
+</body>
+</html>
